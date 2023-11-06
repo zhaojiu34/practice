@@ -195,7 +195,7 @@ int main()
 	int big = 0, small = 0, all = 0;
 	int digit = 0, space = 0, punct = 0;
 	int chat[27] = { 0 };
-	while ((c = getchar()) != EOF);
+	while ((c = getchar()) != EOF)
 	{
 		
 		all++;
