@@ -1,325 +1,325 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
 //int main()
 //{
-//    int a = 0, b = 0, c = 0, d = 0;
-//    scanf("%d %d %d %d", &a, &b, &c, &d);
-//    double sum = 0.0;
-//    sum = a * 0.2 + b * 0.1 + c * 0.2 + d * 0.5;
-//    printf("%.1lf", sum);
-//    return 0;
-//}
-//int main()
-//{
-//    int x1 = 0, y1 = 0;
-//    int x2 = 0, y2 = 0;
-//    scanf("%d %d", &x1, &y1);
-//    scanf("%d %d", &x2, &y2);
-//    int d = (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
-//    printf("%d", d);
-//    return 0;
-//}
-//int main()
-//{
-//    int x = 0, l = 0, r = 0;
-//    scanf("%d %d %d", &x, &l, &r);
-//    if (x >= l && x <= r)
+//    int n = 0;
+//    scanf("%d", &n);
+//    int i = 0;
+//    for (i = 1; i <= n; i++)
 //    {
-//        printf("true");
+//        int t = 0, num = i;
+//        while (num)
+//        {
+//            t = t * 10 + num % 10;
+//            num = num / 10;
+//        }
+//        if (t == i)
+//        {
+//            printf("%d\n", i);
+//        }
 //    }
-//    else {
-//        printf("false");
+//	return 0;
+//}
+//int main()
+//{
+//    int n = 0, x = 0;
+//    scanf("%d", &n);
+//    int arr[101] = { 0 };
+//    int cont = 0, i = 0;
+//    for (i = 0; i < n; i++)
+//    {
+//        scanf("%d ", &arr[i]);
 //    }
+//    scanf("%d", &x);
+//    for (i = 0; i < n; i++)
+//    {
+//        if (x == arr[i])
+//        {
+//            cont++;
+//        }
+//    }
+//    printf("%d", cont);
+//    return 0;
+//}
+//int func(int num)
+//{
+//    if (num == 2)
+//        return 2;
+//    else if (num == 1)
+//        return 1;
+//    else
+//        return func(num - 1) + func(num - 2);
+//
+//}
+//
+//int main()
+//{
+//    int n = 0;
+//    scanf("%d", &n);
+//    int r = func(n);
+//    printf("%d", r);
+//    return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//
+//long long factorial(int n);
+//
+//int main() {
+//
+//    int n;
+//    cin >> n;
+//
+//    cout << factorial(n) << endl;
 //
 //    return 0;
+//}
+//
+//long long factorial(int n) {
+//
+//    if (n == 1 || n == 0)
+//        return 1;
+//    else
+//        return n * factorial(n - 1);
+//
+//
+//}
+//int sum(int num)
+//{
+//    if (num == 1)
+//        return 1;
+//    else
+//        return num + sum(num - 1);
 //}
 //int main()
 //{
 //    int n = 0;
 //    scanf("%d", &n);
-//    if ((n % 4 == 0 && n % 100 != 0) || n % 400 == 0)
-//    {
-//        printf("yes");
-//    }
-//    else {
-//        printf("no");
-//    }
+//    int r = sum(n);
+//    printf("%d", r);
 //    return 0;
+//}
+//long long Ackmann(long long n, long long m)
+//{
+//    if (0 == m)
+//        return n + 1;
+//    else if (m > 0 && 0 == n)
+//        return Ackmann(m, 1);
+//    else if (m > 0 && n > 0)
+//        return Ackmann(m - 1, Ackmann(m, n - 1));
 //}
 //int main()
 //{
-//    int y = 0, m = 0;
-//    scanf("%4d %2d", &y, &m);
-//    if (m >= 3 && m <= 5)
-//    {
-//        printf("spring");
-//    }
-//    else if (m >= 6 && m <= 8)
-//    {
-//        printf("summer");
-//    }
-//    else if (m >= 9 && m <= 11)
-//    {
-//        printf("autumn");
-//    }
-//    else {
-//        printf("winter");
-//    }
+//    long long n = 0, m = 0;
+//    scanf("%lld %lld", &n, &m);
+//    long long r = Ackmann(n, m);
+//    printf("%lld", r);
 //    return 0;
 //}
-//int main()
+//void digit(int n, int i)
 //{
-//    int a = 0, b = 0, c = 0, d = 0;
-//    scanf("%d %d %d %d", &a, &b, &c, &d);
-//    if (a >= b && a >= c && a >= d)
+//    if (n < 9)
+//        printf("%d", n);
+//    else
 //    {
-//        printf("%d", a);
-//    }
-//    else if (b >= a && b >= c && b >= d)
-//    {
-//        printf("%d", b);
-//    }
-//    else if (c >= a && c >= b && c >= d)
-//    {
-//        printf("%d", c);
-//    }
-//    else if (d >= a && d >= c && d >= b)
-//    {
-//        printf("%d", d);
-//    }
-//    return 0;
-//}
-//int main()
-//{
-//    int num = 0;
-//    scanf("%d", &num);
-//    if (num % 2 == 0)
-//    {
-//        printf("2 ");
-//    }
-//    if (num % 3 == 0)
-//    {
-//        printf("3 ");
-//    }
-//    if (num % 7 == 0)
-//    {
-//        printf("7 ");
-//    }
-//    if (num % 2 != 0 && num % 3 != 0 && num % 7 != 0)
-//    {
-//        printf("n");
-//    }
-//    return 0;
-//}
-
-#include<stdio.h>
-//int main()
-//{
-//    float a = 0.0;
-//    char ch = 'n';
-//    int num = 0;
-//    scanf("%f %c", &a, &ch);
-//    if (ch == 'y')
-//    {
-//        if (a < 1)
+//        while (i)
 //        {
-//            printf("25");
-//        }
-//        else {
-//            if ((int)((a - 1) / 1) == a - 1)
-//            {
-//                num = 25 + (a - 1) * 1;
-//                printf("%d", num);
-//            }
-//            else {
-//                num = 25 + ((a - 1) / 1 + 1) * 1;
-//                printf("%d", num);
-//            }
-//        }
-//    }
-//    else {
-//        if (a < 1)
-//        {
-//            printf("20");
-//        }
-//        else {
-//            if ((int)((a - 1) / 1) == a - 1)
-//            {
-//                num = 20 + (a - 1) * 1;
-//                printf("%d", num);
-//            }
-//            else {
-//                num = 20 + ((a - 1) / 1 + 1) * 1;
-//                printf("%d", num);
-//            }
-//        }
-//    }
+//            digit(n / 10, i--);
 //
-//    return 0;
+//        }
+//        printf("%d", n % 10);
+//    }
 //}
-
+//
 //int main()
 //{
-//    int d = 0;
-//    scanf("%d", &d);
-//    double a = 0.0, b = 0.0;
-//    a = d * 1.0;
-//    b = 10 + (double)d / 10;
-//    if (a > b)
-//    {
-//        printf("v");
-//    }
-//    else {
-//        printf("w");
-//    }
-//    return 0;
-//}
-
-//int main()
-//{
-//    int x = 0, y = 0;
-//    scanf("%d %d", &x, &y);
-//    int x1 = 0, y1 = 0;
-//    scanf("%d %d", &x1, &y1);
-//    if (x == x1 && y < y1)
-//    {
-//        printf("u");
-//    }
-//    else if (x == x1 && y > y1)
-//    {
-//        printf("d");
-//    }
-//    else if (y == y1 && x < x1)
-//    {
-//        printf("r");
-//    }
-//    else if (y == y1 && x > x1)
-//    {
-//        printf("l");
-//    }
+//    int x = 0, i = 0;
+//    scanf("%d %d", &x, &i);
 //    return 0;
 //}
 //int main()
 //{
-//    int num = 0;
-//    scanf("%d", &num);
-//    switch (num)
-//    {
-//    case 1:
-//        printf("Monday");
-//        break;
-//    case 2:
-//        printf("Tuesday");
-//        break;
-//    case 3:
-//        printf("Wednesday");
-//        break;
-//    case 4:
-//        printf("Thursday");
-//        break;
-//    case 5:
-//        printf("Friday");
-//        break;
-//    case 6:
-//        printf("Saturday");
-//        break;
-//    case 7:
-//        printf("Sunday");
-//        break;
-//    }
-//    return 0;
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	printf("%d\n", arr[3]);//4
+//	printf("%d\n", arr[7]);//8
+//
+//	return 0;
 //}
 //int main()
 //{
-//    int y = 0, m = 0, d = 0;
-//    scanf("%d %d %d", &y, &m, &d);
-//    int y1 = 0, m1 = 0, d1 = 0;
-//    scanf("%d %d %d", &y1, &m1, &d1);
-//    if (y1 == y && m1 == m && d1 >= d)
-//    {
-//        printf("yes");
-//    }
-//    else if (y1 == y && m1 > m)
-//    {
-//        printf("yes");
-//    }
-//    else if (y1 > y)
-//    {
-//        printf("yes");
-//    }
-//    else {
-//        printf("no");
-//    }
-//    return 0;
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	//下标是0~9
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int i = 0;
+//	for (i = 0; i < sz; i++)//产生0~9的数字
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
 //}
 //int main()
 //{
-//    int math = 0, c = 0, e = 0;
-//    scanf("%d %d %d", &math, &c, &e);
-//    int sum = 0;
-//    sum = (math + c + e) / 3;
-//    if (sum >= 60)
-//    {
-//        printf("NO");
-//    }
-//    else {
-//        printf("YES");
-//    }
-//    return 0;
+//	int arr[10] = {0};//先初始化
+//	//下标是0~9
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &arr[i]);//输入9个数字，下标是0~9
+//	}
+//	for (i = 0; i < 10; i++)//产生0~9的数字
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
 //}
-
-
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int i = 0;
+//	for(i= 0; i< 10 ;i++)
+//	printf("%p\n", &arr[i]);//p表示打印地址，在后面文章会详细讲解
+//	//暂且记住，p为打印地址，&为取地址符号，此处为取数组中每个元素的地址
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	printf("%zd", sizeof(arr));//sizeof的类型是size_t
+//	//用zd打印
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	printf("\n%d", sz);
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[3][5] = { 1,2,3,4,5, 2,3,4,5,6, 3,4,5,6,7 };
+//	printf("%d", arr[1][0]);
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[3][5] = { 1,2,3,4,5, 2,3,4,5,6, 3,4,5,6,7 };
+//	int i = 0;
+//	for (i = 0; i < 3; i++)//产生行号
+//	{
+//		int j = 0;//产生列号
+//		for (j = 0; j < 5; j++)
+//		{
+//			printf("%p\n",&arr[i][j]);
+//		}
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[3][3] = { 0 };
+//	int i = 0;
+//	for (i = 0; i < 3; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < 3; j++)
+//		{
+//			scanf("%d", &arr[i][j]);
+//		}
+//	}
+//	for (i = 0; i < 3; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < 3; j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//#include<stdio.h>
+//#include<string.h>
+//#include<windows.h>
+//#include<stdlib.h>
+//int main()
+//{
+//	//刚开始的时候先打印arr2，然后arr1两端同时先替换arr2
+//	//一个#,在同时替换两个，依此类推
+//	char arr1[] = "welcome to Chian!";
+//	char arr2[] = "#################";
+//	int left = 0;
+//	int right = strlen(arr1) - 1;
+//	//right = sizeof(arr1)-2;
+//	printf("%s\n", arr2);
+//	while (left <= right)
+//	{
+//		Sleep(1000);
+//		arr2[left] = arr1[left];
+//		arr2[right] = arr1[right];
+//		left++;
+//		right--;
+//		printf("%s\n", arr2);
+//		system("cls");
+//	}
+//	printf("%s\n", arr2);
+//
+//
+//
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int key = 0;
+//	int cont = 0;
+//	scanf("%d", &key);
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		cont++;
+//		if (arr[i] == key)
+//		{
+//			printf("找到了，下标是%d\n", key);
+//			break;
+//		}
+//	}
+//	if (i == sz)
+//	{
+//		printf("找不到\n");
+//	}
+//	printf("%d\n", cont);
+//	return 0;
+//}
 int main()
 {
-    int a = 0, b = 0, c = 0;
-    char d = 0;
-    scanf("%1d-%3d-%5d-%c", &a, &b, &c, &d);
-    int sum1 = 0, sum2 = 0, sum3 = 0;
-    sum1 = b % 10 * 4 + b / 10 % 10 * 3 + b / 100 * 2;
-    sum2 = c % 10 * 9 + c / 10 % 10 * 8 + c / 100 % 10 * 7 + c / 1000 % 10 * 6 + c / 10000 * 5;
-    sum3 = sum1 + sum2 + a;
-
-    if (d == 'X')
-    {
-        if (sum3 % 11 == 10)
-        {
-            printf("Right");
-        }
-        else {
-            printf("%d-%d-%d-%d", a, b, c, sum3 % 11);
-        }
-    }
-    else {
-        if (sum3 % 11 == d)
-        {
-            printf("Right");
-        }
-        else {
-            printf("%d-%d-%d-%d", a, b, c, sum3 % 11);
-        }
-    }
-
-    return 0;
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int left = 0;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int right = sz - 1;
+	int mid = 0;
+	int find = 0;
+	int key = 7,cont = 0;
+	while (left <= right)
+	{
+		cont++;
+		mid = (left + right) / 2;
+		if (arr[mid] > key)
+		{
+			right = mid - 1;
+		}
+		else if (arr[mid] < key)
+		{
+			left = mid + 1;
+		}
+		else
+		{
+			find = 1;
+			break;
+		}
+	}
+	if (1 == find)
+	{
+		printf("找到了，是%d\n", key);
+	}
+	else
+		printf("找不到\n");
+	printf("%d\n", cont);
+	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

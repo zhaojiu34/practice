@@ -1,50 +1,66 @@
-#define _CRT_SECURE_NO_WARNINGS 1
-#include "game.h";
-void game()//¸Ãº¯ÊıÊÇÈ·±£ÓÎÏ·ÔËĞĞµÄ£¬Ò²²»ĞèÒª·µ»ØÖµ
-{
-	char mine[ROWS][COLS] = { 0 };//ÓÃÓÚ²¼ÖÃÀ×
-	char show[ROWS][COLS] = { 0 };//ÓÃÓÚÅÅÀ×
-	//Èç¹ûÎÒÃÇÖ±½ÓĞ´11£¬ÔÚÒÔºó»»ÆåÅÌ¹æ¸ñºó£¬ËùÓĞµÄ11¶¼Òª¸ü¸Ä£¬¹ıÓÚÂé·³
-	//ËùÒÔ²»·ÁÓÃ±äÁ¿±íÊ¾£¬ÒÔºóÖ»¸Ä±äÁ¿¾Í¿ÉÒÔ¸Ä±äËùÓĞµÄÊıÖµ
-	 InitMine(mine, ROWS, COLS,'0');//'0'
-	 InitMine(show, ROWS, COLS,'*');//'*'
-	 //PrintMine(mine, ROW, COL);//ÔÚÓÎÏ·Ê±£¬ÅÅÀ×½çÃæÊÇ²»´òÓ¡µÄ
-	                            //´ËÊ±Ö»ÊÇ¿´Ò»ÏÂÎÒÃÇ´úÂë¶Ô²»¶Ô
-	 PrintMine(show, ROW, COL);
-	 PutMine(mine, ROW, COL);//²¼À×Ö»ÔÚmineÖĞ²¼ÖÃ¾ÍĞĞ
-	 PrintMine(mine, ROW, COL);//²é¿´Ò»ÏÂÀ×µÄ·Ö²¼
-	 FindMine(mine, show, ROW, COL);
-}
-void menu()
-{
-	printf("******************\n");
-	printf("***** 1.play *****\n");
-	printf("***** 0.exit *****\n");
-	printf("******************\n");
+#include <windows.h>
 
-}
-int main()
-{
-	srand((unsigned int)time(NULL));
-	int input = 0;
-	do
-	{
-		menu();//²»ĞèÒª·µ»ØÖµ£¬Ö»Òª´òÓ¡³ö²Ëµ¥¾ÍĞĞ
-		printf("ÇëÊäÈë -> ");
-		scanf("%d", &input);
-		switch (input)//¸ù¾İinputµÄÖµÑ¡Ôñ²»Í¬µÄ½á¹û
-		{
-		case 1 :
-			game();
-			break;
-		case 0 :
-			printf("ÍË³öÓÎÏ·\n");
-			break;
-		default :
-			printf("ÊäÈë´íÎó ÇëÖØĞÂÊäÈë\n");
+/* åœ¨è¿™é‡Œå¤„ç†æ‰€æœ‰çš„çª—å£æ¶ˆæ¯ï¼ˆåŒ…æ‹¬è¾“å…¥ï¼‰ */
+LRESULT CALLBACK WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam) {
+	switch(Message) {
+		
+		/* é”€æ¯ï¼ˆå…³é—­ï¼‰çª—å£æ—¶ï¼Œè®©ä¸»çº¿ç¨‹é€€å‡º */
+		case WM_DESTROY: {
+			PostQuitMessage(0);
 			break;
 		}
+		
+		/* ä½¿ç”¨é»˜è®¤çš„è¾“å‡ºè¿‡ç¨‹æ¥å¤„ç†æ‰€æœ‰å…¶ä»–æ¶ˆæ¯ */
+		default:
+			return DefWindowProc(hwnd, Message, wParam, lParam);
+	}
+	return 0;
+}
 
-	} while (input);//ÓÃdo whileÑ­»·ÉÏÀ´¾Í»áÏÈÖ´ĞĞÒ»´Î£¬ÈÃÍæ¼ÒÑ¡Ôñ
+/* Win32 GUIç¨‹åºçš„â€œmainâ€å‡½æ•°ï¼šç¨‹åºä»è¿™é‡Œå¼€å§‹æ‰§è¡Œ */
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+	WNDCLASSEX wc;	/* ç”¨äºè®¾ç½®çª—å£çš„å±æ€§ */
+	HWND hwnd; 		/* æˆ‘ä»¬çš„çª—å£å¥æŸ„ï¼ˆHä»£è¡¨handleï¼ˆå¥æŸ„ï¼‰ï¼ŒWNDä»£è¡¨windowsï¼ˆçª—å£ï¼‰ï¼‰ */
+	MSG msg; 		/* ç”¨äºä¸´æ—¶ä¿å­˜æ”¶åˆ°çš„æ¶ˆæ¯ */
+
+	/* å…ˆå°†æ•´ä¸ªç»“æ„å…¨éƒ¨ç½®é›¶ï¼Œç„¶åå†è®¾ç½®éœ€è¦çš„å­—æ®µ */
+	memset(&wc,0,sizeof(wc));
+	wc.cbSize		 = sizeof(WNDCLASSEX);
+	wc.lpfnWndProc	 = WndProc; /* This is where we will send messages to */
+	wc.hInstance	 = hInstance;
+	wc.hCursor		 = LoadCursor(NULL, IDC_ARROW);
+	
+	/* COLOR_WINDOWS+1ä¸ºç™½è‰²ã€‚Ctrl+é¼ æ ‡å·¦é”®ç‚¹å‡»COLOR_WINDOWå¯ä»¥æŸ¥çœ‹å®ƒçš„å®šä¹‰ */
+	wc.hbrBackground = (HBRUSH)(COLOR_WINDOW+1);
+	wc.lpszClassName = "WindowClass";
+	wc.hIcon		 = LoadIcon(NULL, IDI_APPLICATION); /* åŠ è½½æ ‡å‡†å›¾æ ‡ */
+	wc.hIconSm		 = LoadIcon(NULL, IDI_APPLICATION); /* åŠ è½½æ ‡å‡†å›¾æ ‡ */
+
+	if(!RegisterClassEx(&wc)) {
+		MessageBox(NULL, "Window Registration Failed!","Error!",MB_ICONEXCLAMATION|MB_OK);
 		return 0;
+	}
+
+	hwnd = CreateWindowEx(WS_EX_CLIENTEDGE,"WindowClass","Caption",WS_VISIBLE|WS_OVERLAPPEDWINDOW,
+		CW_USEDEFAULT, /* x */
+		CW_USEDEFAULT, /* y */
+		640, /* çª—å£å®½åº¦ */
+		480, /* çª—å£é«˜åº¦ */
+		NULL,NULL,hInstance,NULL);
+
+	if(hwnd == NULL) {
+		MessageBox(NULL, "Window Creation Failed!","Error!",MB_ICONEXCLAMATION|MB_OK);
+		return 0;
+	}
+
+	/*
+	  è¿™é‡Œæ˜¯æˆ‘ä»¬ç¨‹åºçš„æ ¸å¿ƒéƒ¨åˆ†ã€‚æ‰€æœ‰çš„æ¶ˆæ¯ï¼ˆåŒ…æ‹¬è¾“å…¥ï¼‰éƒ½é€šè¿‡è¿™ä¸ªå¾ªç¯
+	  è°ƒç”¨WndProcå‡½æ•°å¤„ç†ã€‚æ³¨æ„GetMessageä¼šç¨‹åºæš‚æ—¶ä¼‘çœ ï¼Œç›´åˆ°å®ƒæ”¶åˆ°
+	  ä»»æ„æ¶ˆæ¯ä¸ºæ­¢ã€‚æ‰€ä»¥è¿™ä¸ªå¾ªç¯ä¸ä¼šå¯¼è‡´è¿‡é«˜çš„å ç”¨CPUã€‚
+	*/
+	while(GetMessage(&msg, NULL, 0, 0) > 0) { /* å¦‚æœæ²¡æœ‰å‘ç”Ÿé”™è¯¯ï¼Œä¸”æ”¶åˆ°äº†ä»»æ„æ¶ˆæ¯... */
+		TranslateMessage(&msg); /* å°†æ¶ˆæ¯ä¸­çš„é”®ç›˜ç è½¬æ¢ä¸ºå¯¹åº”çš„å­—ç¬¦ */
+		DispatchMessage(&msg); /* è°ƒç”¨WndProcå‡½æ•°å¤„ç†æ¶ˆæ¯ */
+	}
+	return msg.wParam;
 }
