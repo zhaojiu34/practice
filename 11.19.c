@@ -1,175 +1,235 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#/*include<stdio.h>
-
-#include <stdio.h>
-#include <string.h>
-
-	int is_left_move(char* str1, char* str2) 
-	{
-		int len1 = strlen(str1);
-		int len2 = strlen(str2);
-		if (len1 != len2) {
-			return 0;
-		}
-		strncat(str1, str1, len1);
-		char* ret = strstr(str1, str2);
-		if (ret == NULL) {
-			return 0;
-		}
-		else {
-			return 1;
-		}
-	}
-	int main() {
-		char arr1[30] = "abcdef";
-		char arr2[] = "cdefaf";
-		int ret = is_left_move(arr1, arr2);
-		if (ret == 1) {
-			printf("YES\n");
-		}
-		else {
-			printf("NO\n");
-		}
-		return 0;
-	}*/
 //int main()
 //{
-//	int arr[] = { 1,2,3,4,5,1,2,3,4,6 };
-//	int i = 0;
-//	int sz = sizeof(arr) / sizeof(arr[0]);
-//	for (i = 0; i < sz; i++)
+//	int day = 0;
+//	scanf("%d", &day);
+//	switch (day)
 //	{
-//		int cont = 0;
-//		int j = 0;
-//		for (j = 0; j < sz; j++)
-//		{
-//			if (arr[i] == arr[j])
-//			{
-//				cont++;
-//			}
-//		}
-//		if (cont == 1)
-//		{
-//			printf("%d ", arr[i]);
-//		}
+//	case 1:
+//	case 3:
+//	case 5:
+//		printf("NO\n");
+//		break;
+//	default:
+//		printf("YES\n");
+//		break;
 //	}
 //	return 0;
 //}
-//#define max 3
-//int find(int arr[max][max], int k, int* px, int* py)
+//int main()
 //{
-//	int x = 0;
-//	int y = *py - 1;//每一行的最后一个数字是最大的，先和最大的对比
-//	while (x <= *px - 1 && y >= 0)
+//	double bike = 0.0, walk = 0.0;
+//	double s = 0;
+//	scanf("%lf", &s);
+//	bike = 50 + s / 3.0;
+//	walk = s / 1.2;
+//	if (bike > walk)
 //	{
-//		if (arr[x][y] < k)
+//		printf("Walk");
+//	}
+//	else if (bike < walk)
+//	{
+//		printf("Bike");
+//	}
+//	else
+//		printf("All");
+//	return 0;
+//}
+//int main()
+//{
+//	double n = 0.0;
+//	scanf("%lf", &n);
+//	if (n >= 0 && n < 5)
+//	{
+//		printf("%.3lf", -n + 2.5);
+//	}
+//	else if (n >= 5 && n < 10)
+//	{
+//		printf("%.3lf", 2 - 1.5 * (n - 3) * (n - 3));
+//	}
+//	else
+//		printf("%.3lf", n / 2 - 1.5);
+//	return 0;
+//}
+//int main()
+//{
+//	int n = 0;
+//	char ch = 0;
+//	int sum = 0;
+//	scanf("%d %c", &n, &ch);
+//	if (n <= 1000)
+//	{
+//		if (ch == 'y')
 //		{
-//			x++;//先找到哪一行
+//			printf("13");
 //		}
-//		else if (arr[x][y] > k)
+//		else
+//			printf("8");
+//	}
+//	else
+//	{
+//		if (ch == 'y')
 //		{
-//			y--;//再找在哪一列
+//			if ((n - 1000) <= 500)
+//			{
+//				printf("17");
+//			}
+//			else
+//			{
+//				if (((n - 1000) / 500) == ((n - 1000) / 500.0))
+//					printf("%d", ((n - 1000) / 500) * 4 + 13);
+//				else
+//					printf("%d", (((n - 1000) / 500) + 1) * 4 + 13);
+//			}
 //		}
 //		else
 //		{
-//			 *px = x;
-//			 *py = y;//如果有x和y的坐标
-//			return 1;
+//			if ((n - 1000) <= 500)
+//			{
+//				printf("12");
+//			}
+//			else
+//			{
+//				if (((n - 1000) / 500) == ((n - 1000) / 500.0))
+//					printf("%d", ((n - 1000) / 500) * 4 + 8);
+//				else
+//					printf("%d", (((n - 1000) / 500) + 1) * 4 + 8);
+//			}
 //		}
+//
 //	}
 //	return 0;
 //}
 //int main()
 //{
-//	int arr[max][max] = { {1,2,3},{4,5,6},{7,8,9} };
-//	int x = 3, y = 3;
-//	int k = 0;
-//	printf("请输入要查找的数：");
-//	scanf("%d", &k);
-//	int r = find(arr,k,&x,&y);
-//	if (1 == r)
-//	{
-//		printf("找到了，坐标是%d %d\n", x, y);
-//	}
-//	else
-//		printf("没找到\n");
+//	int a = 0, b = 0, c = 0;
+//	scanf("%d %d %d", &a, &b, &c);
+//	if (a > b && a > c)
+//		printf("%d", a);
+//	if (c > b && c > a)
+//		printf("%d", c);
+//	if (b > a && b > c)
+//		printf("%d", b);
 //	return 0;
+//}
+//int main()
+//{
+//	int a = 0, b = 0, c = 0;
+//	scanf("%d %d %d", &a, &b, &c);
+//	if (a + b > c && b + c > a && a + c > b)
+//		printf("yes");
+//	else
+//		printf("no");
+//	return 0;
+//}
+//int main()
+//{
+//	int y = 0;
+//	scanf("%d", &y);
+//	if ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0)
+//		printf("Y");
+//	else
+//		printf("N");
+//	return 0;
+//}
+//int main()
+//{
+//	int x = 0, y = 0;
+//	scanf("%d %d", &x, &y);
+//	if ((x >= -1 && x <= 1) && (y >= -1 && y <= 1))
+//		printf("yes");
+//	else
+//		printf("no");
+//	return 0;
+//}
+//int main()
+//{
+//	int i = 0;
+//	int sum = 0;
+//	int n = 0;
+//	scanf("%d", &n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		sum += i;
+//	}
+//	printf("%d", sum);
+//	return 0;
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int i = 0;
+//	int sum1 = 0, sum2 = 0;
+//	for (i = 1; i <= n; i++)
+//	{
+//		if (i % 2 == 0)
+//		{
+//			sum1 += i;
+//		}
+//		else
+//			sum2 += i;
+//	}
+//	printf("%d %d",sum1, sum2);
+//	return 0;
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int i = 0;
+//	long long sum = 1;
+//	for (i = 1; i <= n; i++)
+//	{
+//		sum *= i;
+//	}
+//	printf("%lld", sum);
 //}
 //#include<stdio.h>
 //int main()
 //{
-//	int a = 0, b = 0, c = 0, d = 0, fd = 0;
+//	int n = 0,stu = 0;
+//	double age = 0.0;
+//	scanf("%d", &n);
+//	int sum = 0;
 //	int i = 0;
-//	for (i = 0; i < 4; i++)
+//	for (i = 0; i < n; i++)
 //	{
-//		if (i == 0)//假设a说的就是假话
-//		{
-//			a = 1; c = 1; d = 0; fd = 1;
-//		}
-//		if (i == 1)//假设b说的是假话
-//		{
-//			a = 0; c = 0; d = 0; fd = 1;
-//		}
-//		if (i == 2)//假设c说的是假话
-//		{
-//			a = 0; c = 1; d = 0; fd = 0;
-//		}
-//		if (i == 3)//假设d说的是假话
-//		{
-//			a = 0; c = 1; d = 1; fd = 0;
-//		}
-//		if ((a + b + c + d + fd == 1) && (fd == 0))//锁定唯一的凶手
-//		{
-//			printf("A是%d,B是%d,c是%d,d是%d\n", a, b, c, d);//这里结果为1的那个人就是凶手
-//		}
+//		scanf("%d", &stu);
+//		sum += stu;
 //	}
+//	age = (double)sum / n ;
+//	printf("%.2lf", age);
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	double sum = 0.0, m = 0.0;
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%lf", &m);
+//		sum += m;
+//	}
+//	
+//	printf("%.4lf", sum / n);
+//}
+//#include<stdio.h>
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int sum = 0;
+//	int m = 0;
+//	double ave = 0.0;
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d", &m);
+//		sum += m;
+//	}
+//	ave = (double)sum / n;
+//	printf("%d %.5lf", sum, ave);
 //	return 0;
 //}
-#include<stdio.h>
-int compar(const void* p1, const void* p2)
-{
-	return (*(int*)p1 - *(int*)p2);
-}
-void swap(const void* p3, const void* p4, int size)
-{
-	int i = 0;
-	for (i = 0; i < size; i++)
-	{
-		char* tmp = *((char *)p3+i);
-		*((char*)p3+i) = *((char*)p4+i);
-		*((char*)p4+i) = tmp;
-		
-
-	}
-}
-void P(void * base, int num, int size, int compar(const void*,const void*))
-{
-	int i = 0;
-	for (i = 0; i < num-1; i++)
-	{
-		//一趟
-		int j = 0;
-		//一趟冒泡排序的全过程
-		for (j = 0; j < num - 1; j++)
-		{
-			if (compar((char *) base+size*j, (char*)base+ size * (j+1)) > 0)
-			{
-				swap((char*)base + size * j, (char*)base + size * (j + 1), size);
-			}
-		}
-	}
-
-}
-int main()
-{
-	int arr[10] = { 1,3,2,6,5,4,7,9,8,0 };
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	P(arr, sz, sizeof(arr[0]), compar);
-	int i = 0;
-	for (i = 0; i < sz; i++)
-	{
-		printf("%d ", arr[i]);
-	}
-	return 0;
-
-}
